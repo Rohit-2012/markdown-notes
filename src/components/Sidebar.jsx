@@ -16,7 +16,7 @@ const Sidebar = ({ notes, setCurrentNoteId, newNote, currentNote, deleteNote }) 
             onClick={() => setCurrentNoteId(note.id)}
           >
             <h4 className="text-snippet">{note.body ? note.body.split('\n')[0] : "Untitled Note"}</h4>
-            <button className="delete-btn" onClick={(event) => deleteNote(event, note.id)}><i className="fa-solid fa-trash"></i></button>
+            <button className="delete-btn" onClick={() => deleteNote(note.id)}><i className="fa-solid fa-trash"></i></button>
           </div>
         </div>
       ))}
