@@ -65,18 +65,10 @@ main {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   height: 2.3rem;
+   border-bottom: 1px solid rgb(200, 228, 255);
 }
 
-.title--delete {
-   display: none;
-   cursor: pointer;
-   background-color: transparent;
-   border: none;
-}
-
-.title:hover .title--delete {
-   display: block;
-}
 
 .note-summary:not(:last-of-type) {
    border-bottom: 1px solid lightgray;
@@ -146,4 +138,19 @@ main {
    padding: 0.5rem;
    border: none;
    border-radius: 0.4rem;
+}
+
+.delete-btn {
+   display: none;
+   background: none;
+   border: none;
+   margin-right: 1rem;
+   font-size: 1.2rem;
+   font-weight: bold;
+   color: black;
+   cursor: pointer;
+}
+
+.title:hover > .delete-btn {
+   display: block;
 }
