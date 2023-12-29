@@ -1,4 +1,4 @@
-const Sidebar = ({ notes, setCurrentNoteId, newNote, currentNote }) => {
+const Sidebar = ({ notes, setCurrentNoteId, newNote, currentNote, deleteNote }) => {
   return (
     <section className="pane sidebar">
       <div className="sidebar-header">
@@ -7,7 +7,7 @@ const Sidebar = ({ notes, setCurrentNoteId, newNote, currentNote }) => {
           +
         </button>
       </div>
-      {notes.map((note, index) => (
+      {notes.map(note => (
         <div key={note.id} className="sidebar-note">
           <div
             className={`title ${
@@ -15,7 +15,8 @@ const Sidebar = ({ notes, setCurrentNoteId, newNote, currentNote }) => {
             }`}
             onClick={() => setCurrentNoteId(note.id)}
           >
-            <h4 className="text-snippet">Note {index + 1}</h4>
+            <h4 className="text-snippet">{note.body ? note.body.split('\n')[0] : "Untitled Note"}</h4>
+            <button className="delete-btn" onClick={(event) => deleteNote(event, note.id)}><i className="fa-solid fa-trash"></i></button>
           </div>
         </div>
       ))}
